@@ -5,6 +5,6 @@ const blogSchema=new mongoose.Schema({
     desc:{ type : String, required:true },
     priority:{ type : String, required:true },
     images:{ type : String, required:true },
-    complete:{ type : Boolean, default:true },
+    complete:{ type : Boolean, default:false },
 })
 module.exports =  mongoose.model("blog",blogSchema)
