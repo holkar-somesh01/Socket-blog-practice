@@ -10,7 +10,7 @@ exports.fetchBlog= asyncHandler(async(req,res)=>{
 
 exports.createBlog = asyncHandler(async(req,res)=>{
     await Blog.create(req.body)
-    const result = await Todo.find()
+    const result = await Blog.find()
     io.emit("blog-create", result) 
     res.json({message:"Blog Create Success"})
 })
