@@ -12,7 +12,8 @@ app.use(cors({ origin : true, credentials : true }))
 app.use("/api/blog",require("./routes/blog.routes"))
 
 app.use("*",(req,res)=>{
-    res.sendFile(path.join(__dirname), "dist", "index.html")
+    // res.sendFile(path.join(__dirname), "dist", "index.html")
+    res.status(404).json({message:"Resource Not Found"})
 })
 
 app.use((err,req,res,next)=>{
@@ -23,7 +24,5 @@ mongoose.connect(process.env.MONGO_URL)
 mongoose.connection.once("open",()=>{
     console.log("MONGO CONNECTED");
     httpServer.listen(process.env.PORT,console.log("SERVER RUNNING 🏃‍♂️")
-    )
-    
-})
+    )})
 
