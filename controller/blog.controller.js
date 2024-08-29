@@ -27,4 +27,4 @@ exports.deleteBlog= asyncHandler(async(req,res)=>{
     const result = await Blog.find()
     io.emit("blog-create", result) 
     res.json({message:"Blog Delete Success"})
-})
+}) 
