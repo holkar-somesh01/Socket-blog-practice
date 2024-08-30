@@ -13,6 +13,7 @@ app.use("/api/blog",require("./routes/blog.routes"))
 
 app.use("*",(req,res)=>{
     res.sendFile(path.join(__dirname), "dist", "index.html")
+    // res.status(404).json("Resource Not Found")
 })
 
 app.use((err,req,res,next)=>{
